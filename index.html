@@ -80,33 +80,33 @@
 
   <section>
     <p>
-      Apollonio da Perga (terzo secolo a.C.) fu, assieme ad Euclide e al nostro Archimede, uno dei più grandi matematici dell'antichità. In un'opera chiamata <strong>Tangenze</strong>, propone un problema molto interessante:<br>
+      Apollonio da Perga (terzo secolo a.C.) fu, assieme ad Euclide e al nostro Archimede, uno dei più grandi matematici dell'antichità. In un'opera chiamata <strong>Tangenze</strong>, propone un problema molto interessante.<br>
 
       <em>Dati tre cerchi tangenti a due a due, trovare un cerchio tangente a tutti e tre.</em>
+    </p>
 
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" height="200" width="200">
-        <circle cx="100" cy="60" r="50"/>
-        <circle cx="170" cy="70" r="20"/>
-        <circle cx="155" cy="115" r="27"/>
+        <circle style="fill:dimgray" cx="80" cy="80" r="50"/>
+        <circle style="fill:dimgray" cx="150" cy="90" r="20"/>
+        <circle style="fill:dimgray" cx="135" cy="135" r="27"/>
       </svg>
-    </p>
 
     <p>
     Purtroppo gli scritti originali sono persi nella storia e la soluzione data da Apollonio non è pervenuta fino a noi, ma, per fortuna conosciamo il problema grazie ad una citazione di <a href="https://it.wikipedia.org/wiki/Pappo_di_Alessandria">Pappo</a>. Studierò questo problema e la sua iterazione muovendomi lungo il sentiero che l'ispirazione mi ha tracciato.
     </p>
 
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" height="400" width="400">
-      <circle cx="140" cy="160" r="100" />
-      <circle cx="140" cy="160" r="105" stroke-dasharray="5, 5"/> <!-- r + 5 -->
-      <circle cx="140" cy="160" r="120" stroke-dasharray="5, 5"/> <!-- r + 20 -->
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 370 400" height="400" width="370">
+      <circle cx="120" cy="160" r="100" />
+      <circle cx="120" cy="160" r="105" stroke-dasharray="5, 5"/> <!-- r + 5 -->
+      <circle cx="120" cy="160" r="120" stroke-dasharray="5, 5"/> <!-- r + 20 -->
       
-      <circle cx="279" cy="142" r="40" />
-      <circle cx="279" cy="142" r="45" stroke-dasharray="5, 5"/> <!-- r + 5 -->
-      <circle cx="279" cy="142" r="60" stroke-dasharray="5, 5"/> <!-- r + 20 -->
+      <circle cx="259" cy="142" r="40" />
+      <circle cx="259" cy="142" r="45" stroke-dasharray="5, 5"/> <!-- r + 5 -->
+      <circle cx="259" cy="142" r="60" stroke-dasharray="5, 5"/> <!-- r + 20 -->
       
-      <circle cx="273" cy="232" r="50" />
-      <circle cx="273" cy="232" r="55" stroke-dasharray="5, 5"/> <!-- r + 5 -->
-      <circle cx="273" cy="232" r="70" stroke-dasharray="5, 5"/> <!-- r + 20 -->
+      <circle cx="253" cy="232" r="50" />
+      <circle cx="253" cy="232" r="55" stroke-dasharray="5, 5"/> <!-- r + 5 -->
+      <circle cx="253" cy="232" r="70" stroke-dasharray="5, 5"/> <!-- r + 20 -->
     </svg>
   </section>
 
@@ -116,6 +116,21 @@
     <p>
     Siano tre cerchi tangenti a due a due, se si espandono come le onde di tre sassi lanciati in uno stagno, c'è un instante nel quale i tre cerchi passano per lo stesso punto. Questo punto si trova all'interno della zona detta <strong>triangolo curvilineo</strong>, delimitata dai tre cerchi iniziali ed è il centro del cerchio da trovare! Infatti se ho due cerchi tangenti di raggi <i>R</i> ed <i>r</i> e voglio trovare un cerchio di raggio <i>ρ</i> tangente ai due, li espando fino a che i raggi siano <i>R + ρ</i> e <i>r + ρ</i>. Uno dei punti in comune dei nuovi cerchi può essere il centro del cerchio di raggio <i>ρ</i>.
     </p>
+
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 370 400" height="400" width="370">
+    <circle cx="120" cy="160" r="100">
+      <animate attributeName="r" values="100;109;109;100" dur="10s" repeatCount="indefinite"/>
+    </circle>
+      
+    <circle cx="259" cy="142" r="40">
+      <animate attributeName="r" values="40;49;49;40" dur="10s" repeatCount="indefinite"/>
+
+    </circle>
+      
+    <circle cx="253" cy="232" r="50">
+      <animate attributeName="r" values="50;59;59;50" dur="10s" repeatCount="indefinite"/>
+    </circle>
+    </svg>
   </section>
 </body>
 </html>
