@@ -8,18 +8,22 @@
   <meta name="description" content="la mia tesi di laurea" />
   <meta name="author" content="Gianluca Casati" />
   <title>Sul Problema di Apollonio</title>
+
   <style>
     :root {
       --black: #121212;
       --white: #fbfbfb;
     }
+
     html {
       box-sizing: border-box;
       font-size: 17px;
     }
+
     *, *:before, *:after {
       box-sizing: inherit;
     }
+
     body {
       margin: 0;
       padding: 0;
@@ -27,18 +31,36 @@
       min-height: 100vh;
       font-family: Georgia, 'Times New Roman', Times, serif;
     }
+
     section {
       background-color: var(--white);
+      color: var(--black);
       min-height: 99vh;
       max-width: 71ch;
       padding: 3em 2em;
       margin: 3px;
     }
+
     h1 {
       font-size: 2.5em;
     }
+
+    h2 {
+      font-size: 2.2em;
+    }
+
     p {
       line-height: 1.7;
+    }
+
+    a, a:link, a:visited, a:hover, a:active {
+      color: inherit;
+      text-decoration: underline;
+    }
+
+    circle {
+      stroke: var(--black);
+      fill: transparent
     }
   </style>
 </head>
@@ -58,17 +80,41 @@
 
   <section>
     <p>
-      Apollonio da Perga (terzo secolo a.C.) fu, assieme ad Euclide e al nostro Archimede, uno dei più grandi matematici dell'antichità. In un'opera chiamata <b>Tangenze</b>, propone un problema molto interessante:<br>
+      Apollonio da Perga (terzo secolo a.C.) fu, assieme ad Euclide e al nostro Archimede, uno dei più grandi matematici dell'antichità. In un'opera chiamata <strong>Tangenze</strong>, propone un problema molto interessante:<br>
 
-      <em>Dati tre cerchi tangenti a due a due,</em><br>
+      <em>Dati tre cerchi tangenti a due a due, trovare un cerchio tangente a tutti e tre.</em>
 
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" height="200" width="200">
         <circle cx="100" cy="60" r="50"/>
         <circle cx="170" cy="70" r="20"/>
         <circle cx="155" cy="115" r="27"/>
       </svg>
+    </p>
 
-      <em>trovare un cerchio tangente a tutti e tre.</em>
+    <p>
+    Purtroppo gli scritti originali sono persi nella storia e la soluzione data da Apollonio non è pervenuta fino a noi, ma, per fortuna conosciamo il problema grazie ad una citazione di <a href="https://it.wikipedia.org/wiki/Pappo_di_Alessandria">Pappo</a>. Studierò questo problema e la sua iterazione muovendomi lungo il sentiero che l'ispirazione mi ha tracciato.
+    </p>
+
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" height="400" width="400">
+      <circle cx="140" cy="160" r="100" />
+      <circle cx="140" cy="160" r="105" stroke-dasharray="5, 5"/> <!-- r + 5 -->
+      <circle cx="140" cy="160" r="120" stroke-dasharray="5, 5"/> <!-- r + 20 -->
+      
+      <circle cx="279" cy="142" r="40" />
+      <circle cx="279" cy="142" r="45" stroke-dasharray="5, 5"/> <!-- r + 5 -->
+      <circle cx="279" cy="142" r="60" stroke-dasharray="5, 5"/> <!-- r + 20 -->
+      
+      <circle cx="273" cy="232" r="50" />
+      <circle cx="273" cy="232" r="55" stroke-dasharray="5, 5"/> <!-- r + 5 -->
+      <circle cx="273" cy="232" r="70" stroke-dasharray="5, 5"/> <!-- r + 20 -->
+    </svg>
+  </section>
+
+  <section>
+    <h2>Soluzione euristica</h2>
+
+    <p>
+    Siano tre cerchi tangenti a due a due, se si espandono come le onde di tre sassi lanciati in uno stagno, c'è un instante nel quale i tre cerchi passano per lo stesso punto. Questo punto si trova all'interno della zona detta <strong>triangolo curvilineo</strong>, delimitata dai tre cerchi iniziali ed è il centro del cerchio da trovare! Infatti se ho due cerchi tangenti di raggi <i>R</i> ed <i>r</i> e voglio trovare un cerchio di raggio <i>ρ</i> tangente ai due, li espando fino a che i raggi siano <i>R + ρ</i> e <i>r + ρ</i>. Uno dei punti in comune dei nuovi cerchi può essere il centro del cerchio di raggio <i>ρ</i>.
     </p>
   </section>
 </body>
