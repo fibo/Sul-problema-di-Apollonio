@@ -68,7 +68,7 @@
   <section>
     <h1>Sul Problema di Apollonio</h1>
 
-    <p>
+    <p style="font-size: 1.2em">
     Sulle rive di uno stagno, passò un satiro e La vide,<br>
     Reginella sempre bella, è la musica di Euclide.<br>
     È all'identità, il riflesso, ciò a cui diede movimento,<br>
@@ -80,16 +80,16 @@
 
   <section>
     <p>
-      Apollonio da Perga (terzo secolo a.C.) fu, assieme ad Euclide e al nostro Archimede, uno dei più grandi matematici dell'antichità. In un'opera chiamata <strong>Tangenze</strong>, propone un problema molto interessante.<br>
-
-      <em>Dati tre cerchi tangenti a due a due, trovare un cerchio tangente a tutti e tre.</em>
+    Apollonio da Perga (terzo secolo a.C.) fu, assieme ad Euclide e al nostro Archimede, uno dei più grandi matematici dell'antichità. In un'opera chiamata <strong>Tangenze</strong>, propone un problema molto interessante.<br>
     </p>
 
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" height="200" width="200">
-        <circle style="fill:dimgray" cx="80" cy="80" r="50"/>
-        <circle style="fill:dimgray" cx="150" cy="90" r="20"/>
-        <circle style="fill:dimgray" cx="135" cy="135" r="27"/>
-      </svg>
+    <p style="font-size: 1.2em"><em>Dati tre cerchi tangenti a due a due, trovare un cerchio tangente a tutti e tre.</em></p>
+
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" height="200" width="200">
+      <circle style="fill:dimgray" cx="80" cy="80" r="50"/>
+      <circle style="fill:dimgray" cx="150" cy="90" r="20"/>
+      <circle style="fill:dimgray" cx="135" cy="135" r="27"/>
+    </svg>
 
     <p>
     Purtroppo gli scritti originali sono persi nella storia e la soluzione data da Apollonio non è pervenuta fino a noi, ma, per fortuna conosciamo il problema grazie ad una citazione di <a href="https://it.wikipedia.org/wiki/Pappo_di_Alessandria">Pappo</a>. Studierò questo problema e la sua iterazione muovendomi lungo il sentiero che l'ispirazione mi ha tracciato.
@@ -130,6 +130,24 @@
     <circle cx="253" cy="232" r="50">
       <animate attributeName="r" values="50;59;59;50" dur="10s" repeatCount="indefinite"/>
     </circle>
+    </svg>
+
+    <p>
+    Se esiste una soluzione del <em>Problema di Apollonio</em> (PdA), si può applicare questa espansione ai tre cerchi tangenti a due a due per trovare il cerchio richiesto. Ma l'espansione di cui si parla non è una trasformazione del piano in se stesso, non è neanche bigettiva. Per andare avanti userò la geometria che sembra essere la più naturale per questo argomento: la geometria inversiva nel piano.
+    </p>
+  </section>
+
+  <section>
+    <p>
+    Esistono due soluzioni del <i>PdA</i>: oltre al cerchio che si trova all'interno del triangolo curvilineo ce n'è anche uno esterno che è tangente ai tre cerchi iniziali.
+    </p>
+
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 375 400" height="375" width="400">
+      <circle style="fill:dimgray" cx="159" cy="234" r="10"/> <!-- soluzione interna -->
+      <circle cx="150" cy="200" r="150" stroke-dasharray="5, 5"/> <!-- soluzione esterna -->
+      <circle cx="100" cy="159" r="85"/>
+      <circle cx="232" cy="228" r="63"/>
+      <circle cx="135" cy="294" r="54"/>
     </svg>
   </section>
 </body>
